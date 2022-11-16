@@ -27,7 +27,7 @@ foreach ($storage in $filteredstorageviews)
       if (($allocation-100) -gt $OverAllocation) {
          New-Object -TypeName PSObject -Property @{
             "Datastore" = $storage.name
-            "OverAllocation" = $overAllocation }
+            "OverAllocation %" = $allocation }
       }
    }
 }
@@ -37,3 +37,4 @@ $Header = ("Datastore OverAllocation Over {0}%: [count]" -f $OverAllocation)
 # Change Log
 # 1.3 : 20150223 monahancj - Added datastore filtering
 # 1.4 : Added Get-vCheckSetting, fixed logic to report over allocation properly
+# 1.5 : 20221116 - Fixed logic to report overallocation percentage properly.
